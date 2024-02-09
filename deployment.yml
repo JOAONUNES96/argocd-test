@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: deployment
   labels:
-    app: java-app
+    app: argocd-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: java-app
+      app: argocd-test
   template:
     metadata:
       labels:
-        app: java-app
+        app: argocd-test
     spec:
       containers:
-        - name: java-app
+        - name: argocd-test
           image: joaonunes96/argocd-test:1.0
           ports:
             - containerPort: 8080
