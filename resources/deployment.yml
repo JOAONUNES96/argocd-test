@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: argocd-test
-          image: joaonunes96/argocd-test3:1.0
+          image: joaonunes96/argocd-test4:1.0
           ports:
             - containerPort: 8080
