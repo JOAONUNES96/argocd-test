@@ -18,7 +18,7 @@ spec:
             - -jar
             - asa-performance-tests-0.0.1-SNAPSHOT-jar-with-dependencies.jar
           args:
-            - -rate=$(RATE_VAR)
+            - -rate=10
             - -producers=10
             - -duration=$(DURATION_VAR)
             - -brand=pp
