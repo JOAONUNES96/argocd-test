@@ -9,23 +9,14 @@ spec:
   parallelism: 3
   completions: 3
   template:
+    metadata:
+      labels:
+        app: argocd-test
     spec:
+      restartPolicy: Never
       containers:
         - name: argocd-test
           image: joaonunes96/argocd-test4:1.0
-          command:
-            - java
-            - -jar
-            - asa-performance-tests-0.0.1-SNAPSHOT-jar-with-dependencies.jar
-          args:
-            - -rate=10
-            - -producers=10
-            - -duration=$(DURATION_VAR)
-            - -brand=pp
-          env:
-            - name: DURATION_VAR
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.annotations['argocd.argoproj.io/duration']
+          command: ["java", "-jar", "asa-performance-tests-0.0.1-SNAPSHOT-jar-with-dependencies.jar", "-rate=100", "-producers=10", "-duration=12", "-brand=pp"]
           ports:
             - containerPort: 8080
