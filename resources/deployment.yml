@@ -8,9 +8,6 @@ metadata:
 spec:
   parallelism: 3
   completions: 3
-  selector:
-    matchLabels:
-      app: argocd-test
   template:
     metadata:
       labels:
@@ -20,7 +17,6 @@ spec:
       containers:
         - name: argocd-test
           image: joaonunes96/argocd-test4:1.0
-          command:
-            -  "java -jar asa-performance-tests-0.0.1-SNAPSHOT-jar-with-dependencies.jar -rate=100 -producers=10 -duration=12 -brand=pp"
+          command: ["java", "-jar", "asa-performance-tests-0.0.1-SNAPSHOT-jar-with-dependencies.jar", "-rate=100", "-producers=10", "-duration=12", "-brand=pp"]
           ports:
             - containerPort: 8080
