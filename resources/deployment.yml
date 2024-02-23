@@ -22,6 +22,4 @@ spec:
             - containerPort: 8080
           env:
             - name: DURATION_VAR
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.annotations['argocd.argoproj.io/duration']
+              value: '100'
