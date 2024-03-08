@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-test
+  namespace: argocd-test
+data:
+  RATE: '100'
+  PRODUCERS: '10'
+  DURATION: '12'
+  BRAND: 'pp'
