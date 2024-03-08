@@ -38,6 +38,6 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: argocd-test
-                  key: DURATION
+                  key: BRAND
           ports:
             - containerPort: 8080
