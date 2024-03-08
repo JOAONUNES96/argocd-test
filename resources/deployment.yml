@@ -23,21 +23,21 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: argocd-test
-                  key: rate
+                  key: RATE
             - name: PRODUCERS
               valueFrom:
                 configMapKeyRef:
                   name: argocd-test
-                  key: producers
+                  key: PRODUCERS
             - name: DURATION
               valueFrom:
                 configMapKeyRef:
                   name: argocd-test
-                  key: duration
+                  key: DURATION
             - name: BRAND
               valueFrom:
                 configMapKeyRef:
                   name: argocd-test
-                  key: brand
+                  key: DURATION
           ports:
             - containerPort: 8080
